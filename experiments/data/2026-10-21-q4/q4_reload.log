@@ -1,0 +1,10 @@
+RES PAGES SIZE FILE
+ 0B     0  13G q4/decode_S512_B1.rbln
+469.74 414.07 347.40 492/7081 4094202
+{"file": "decode_S512_B1.rbln", "size_gb": 14.0, "host_load_s": 54.716, "create_runtime_s": 0.711, "first_run_s": 0.386, "second_run_s": 0.249, "steady_median_s": 0.349, "load_to_first_token_s": 55.813, "alloc_per_node": [14212399104], "rbln_stat": ["| 3   | RBLN-CA22 | rbln3   |  0000:c4:00.0 |  46C |  37.4W  |  P2  |  13.2GiB / 15.7GiB  |  12.8 |", "| 3   | python3             |   4094203    |   10001   |  normal  |  0   |       13.2GiB |  idle  |"], "loadavg": ["486.62", "430.83", "358.38"]}
+  RES   PAGES SIZE FILE
+  13G 3418623  13G q4/decode_S512_B1.rbln
+{"file": "decode_S512_B1.rbln", "size_gb": 14.0, "host_load_s": 31.652, "create_runtime_s": 0.572, "first_run_s": 0.368, "second_run_s": 0.2691, "steady_median_s": 0.232, "load_to_first_token_s": 32.592, "alloc_per_node": [14212399104], "rbln_stat": ["| 3   | RBLN-CA22 | rbln3   |  0000:c4:00.0 |  46C |  41.6W  |  P2  |  13.2GiB / 15.7GiB  |  12.8 |", "| 3   | python3             |   4100405    |   10001   |  normal  |  0   |       13.2GiB |  idle  |"], "loadavg": ["462.41", "432.94", "362.56"]}
+{"file": "decode_S512_B1.rbln", "size_gb": 14.0, "host_load_s": 25.661, "create_runtime_s": 0.499, "first_run_s": 0.385, "second_run_s": 0.2678, "steady_median_s": 0.306, "load_to_first_token_s": 26.546, "alloc_per_node": [14212399104], "rbln_stat": ["| 3   | RBLN-CA22 | rbln3   |  0000:c4:00.0 |  45C |  39.5W  |  P2  |  13.2GiB / 15.7GiB  |  19.3 |", "| 3   | python3             |   4102670    |   10001   |  normal  |  0   |       13.2GiB |  idle  |"], "loadavg": ["465.42", "437.26", "366.98"]}
+DONE
+
