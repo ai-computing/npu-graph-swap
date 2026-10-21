@@ -1,0 +1,4 @@
+2026-10-21T09:40:31.49217135Z  INFO furiosa_generator::entrypoint: DP group 0: kv_cache=29222 MB
+2026-10-21T09:40:31.492739374Z  INFO furiosa_generator::backing_file: Total size of parameters loaded: 15.0 GiB in 204.8674 s
+2026-10-21T09:40:34.746506483Z  INFO furiosa_generator::next_gen::scheduler::memory_manager: Configured KV cache blocks, global_num_blocks: 233777, aux_num_blocks: None
+2026-10-21T09:40:34.766634769Z  INFO furiosa_generator::next_gen::generator: max_kv_len=233776 (from KV cache blocks across 1 DP device(s))
