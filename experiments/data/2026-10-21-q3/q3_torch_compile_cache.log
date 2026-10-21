@@ -1,0 +1,20 @@
+== fresh
+{'batch': 1, 's': 13.598, 'max_abs_err': 0.0004970617592334747, 'mem': '268.0MiB / 15.7GiB'}
+{'batch': 4, 's': 5.06, 'max_abs_err': 0.0005834586918354034, 'mem': '280.0MiB / 15.7GiB'}
+{'batch': 1, 's': 0.002, 'max_abs_err': 0.0004970617592334747, 'mem': '280.0MiB / 15.7GiB'}
+{'batch': 4, 's': 0.025, 'max_abs_err': 0.0005834586918354034, 'mem': '280.0MiB / 15.7GiB'}
+RESULT {"mode": "fresh", "cache_files_before": [], "mem0": "0.0B / 15.7GiB", "steps": [{"batch": 1, "s": 13.598, "max_abs_err": 0.0004970617592334747, "mem": "268.0MiB / 15.7GiB"}, {"batch": 4, "s": 5.06, "max_abs_err": 0.0005834586918354034, "mem": "280.0MiB / 15.7GiB"}, {"batch": 1, "s": 0.002, "max_abs_err": 0.0004970617592334747, "mem": "280.0MiB / 15.7GiB"}, {"batch": 4, "s": 0.025, "max_abs_err": 0.0005834586918354034, "mem": "280.0MiB / 15.7GiB"}], "cache_files_after": ["edccfacd89676ae6.rbln", "f15fe133302180c9.rbln"]}
+== cached
+{'batch': 1, 's': 4.303, 'max_abs_err': 0.0004970617592334747, 'mem': '268.0MiB / 15.7GiB'}
+{'batch': 4, 's': 0.77, 'max_abs_err': 0.0005834586918354034, 'mem': '280.0MiB / 15.7GiB'}
+{'batch': 1, 's': 0.002, 'max_abs_err': 0.0004970617592334747, 'mem': '280.0MiB / 15.7GiB'}
+{'batch': 4, 's': 0.079, 'max_abs_err': 0.0005834586918354034, 'mem': '280.0MiB / 15.7GiB'}
+RESULT {"mode": "cached", "cache_files_before": ["edccfacd89676ae6.rbln", "f15fe133302180c9.rbln"], "mem0": "0.0B / 15.7GiB", "steps": [{"batch": 1, "s": 4.303, "max_abs_err": 0.0004970617592334747, "mem": "268.0MiB / 15.7GiB"}, {"batch": 4, "s": 0.77, "max_abs_err": 0.0005834586918354034, "mem": "280.0MiB / 15.7GiB"}, {"batch": 1, "s": 0.002, "max_abs_err": 0.0004970617592334747, "mem": "280.0MiB / 15.7GiB"}, {"batch": 4, "s": 0.079, "max_abs_err": 0.0005834586918354034, "mem": "280.0MiB / 15.7GiB"}], "cache_files_after": ["edccfacd89676ae6.rbln", "f15fe133302180c9.rbln"]}
+== partial
+{'batch': 1, 's': 1.106, 'max_abs_err': 0.0004970617592334747, 'mem': '268.0MiB / 15.7GiB'}
+{'batch': 4, 's': 5.466, 'max_abs_err': 0.0005834586918354034, 'mem': '536.0MiB / 15.7GiB'}
+{'batch': 1, 's': 0.002, 'max_abs_err': 0.0004970617592334747, 'mem': '536.0MiB / 15.7GiB'}
+{'batch': 4, 's': 0.079, 'max_abs_err': 0.0005834586918354034, 'mem': '536.0MiB / 15.7GiB'}
+RESULT {"mode": "partial", "cache_files_before": ["edccfacd89676ae6.rbln", "f15fe133302180c9.rbln"], "mem0": "0.0B / 15.7GiB", "cache_files_kept": ["f15fe133302180c9.rbln"], "steps": [{"batch": 1, "s": 1.106, "max_abs_err": 0.0004970617592334747, "mem": "268.0MiB / 15.7GiB"}, {"batch": 4, "s": 5.466, "max_abs_err": 0.0005834586918354034, "mem": "536.0MiB / 15.7GiB"}, {"batch": 1, "s": 0.002, "max_abs_err": 0.0004970617592334747, "mem": "536.0MiB / 15.7GiB"}, {"batch": 4, "s": 0.079, "max_abs_err": 0.0005834586918354034, "mem": "536.0MiB / 15.7GiB"}], "cache_files_after": ["edccfacd89676ae6.rbln", "f15fe133302180c9.rbln"]}
+DONE
+

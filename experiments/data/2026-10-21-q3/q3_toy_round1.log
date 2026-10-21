@@ -1,0 +1,29 @@
+== same_session_late
+464.41 436.59 366.39 493/7173 4104114
+RESULT {"mode": "same_session_late", "mem0": "P14", "err_b1": 0.0004970617592334747, "mem_after_b1": "P2", "err_b4": 0.0005834586918354034, "mem_after_b4": "P14", "err_b1_again": 0.0004970617592334747, "compile_s": [11.5, 8.9], "info_b1": {"alloc": [278921216], "ctx": "19cfff82cd1f11f18ba60b04fb37b10f", "by_key": {"CBPerDevice": [2097152], "CmdStream": [2097152], "ConstBuf": [0], "Init": [2097152], "Input": [2097152], "Intermediate": [2097152], "Kernel": [268435456], "Output": [2097152]}}, "info_b4": {"alloc": [10485760], "ctx": "19cfff82cd1f11f18ba60b04fb37b10f", "by_key": {"CBPerDevice": [2097152], "CmdStream": [2097152], "ConstBuf": [0], "Init": [2097152], "Input": [2097152], "Intermediate": [2097152], "Output": [2097152]}}}
+== global_late
+487.27 446.51 373.41 483/7065 4106143
+RESULT {"mode": "global_late", "mem0": "P14", "err_b1": 0.0004970617592334747, "mem_after_b1": "P2", "err_b4": 0.0005834586918354034, "mem_after_b4": "P2", "err_b1_again": 0.0004970617592334747, "compile_s": [6.0, 5.7], "info_b1": {"alloc": [278921216], "ctx": "kGlobalCtx2", "by_key": {"CBPerDevice": [2097152], "CmdStream": [2097152], "ConstBuf": [0], "Init": [2097152], "Input": [2097152], "Intermediate": [2097152], "Kernel": [268435456], "Output": [2097152]}}, "info_b4": {"alloc": [10485760], "ctx": "kGlobalCtx2", "by_key": {"CBPerDevice": [2097152], "CmdStream": [2097152], "ConstBuf": [0], "Init": [2097152], "Input": [2097152], "Intermediate": [2097152], "Output": [2097152]}}}
+== save_share_1
+475.61 448.02 376.26 509/7068 4108024
+RESULT {"mode": "save_share_1", "mem0": "P14", "compile_s": 12.2, "info": {"alloc": [278921216], "ctx": "4a8b8d94cd1f11f18ba60b04fb37b10f", "by_key": {"CBPerDevice": [2097152], "CmdStream": [2097152], "ConstBuf": [0], "Init": [2097152], "Input": [2097152], "Intermediate": [2097152], "Kernel": [268435456], "Output": [2097152]}}}
+== save_share_4
+479.28 451.36 379.65 510/7203 4109608
+RESULT {"mode": "save_share_4", "mem0": "P14", "compile_s": 13.1, "info": {"alloc": [278921216], "ctx": "5bd303a2cd1f11f18ba60b04fb37b10f", "by_key": {"CBPerDevice": [2097152], "CmdStream": [2097152], "ConstBuf": [0], "Init": [2097152], "Input": [2097152], "Intermediate": [2097152], "Kernel": [268435456], "Output": [2097152]}}}
+== load_share
+485.73 455.66 383.36 465/7035 4110851
+RESULT {"mode": "load_share", "mem0": "P14", "err_b1": 0.0004970617592334747, "mem_after_b1": "P14", "err_b4": 0.0005834586918354034, "mem_after_b4": "P14", "err_b1_again": 0.0004970617592334747, "info_b1": {"alloc": [278921216], "ctx": "4a8b8d94cd1f11f18ba60b04fb37b10f", "by_key": {"CBPerDevice": [2097152], "CmdStream": [2097152], "ConstBuf": [0], "Init": [2097152], "Input": [2097152], "Intermediate": [2097152], "Kernel": [268435456], "Output": [2097152]}}, "info_b4": {"alloc": [278921216], "ctx": "5bd303a2cd1f11f18ba60b04fb37b10f", "by_key": {"CBPerDevice": [2097152], "CmdStream": [2097152], "ConstBuf": [0], "Init": [2097152], "Input": [2097152], "Intermediate": [2097152], "Kernel": [268435456], "Output": [2097152]}}}
+== save_global_1
+478.31 456.16 385.44 450/7038 4112205
+RESULT {"mode": "save_global_1", "mem0": "0.0B / 15.7GiB", "compile_s": 23.7, "info": {"alloc": [278921216], "ctx": "kGlobalCtx2", "by_key": {"CBPerDevice": [2097152], "CmdStream": [2097152], "ConstBuf": [0], "Init": [2097152], "Input": [2097152], "Intermediate": [2097152], "Kernel": [268435456], "Output": [2097152]}}}
+== save_global_4
+485.15 460.85 390.36 455/7015 4114020
+RESULT {"mode": "save_global_4", "mem0": "0.0B / 15.7GiB", "compile_s": 12.1, "info": {"alloc": [278921216], "ctx": "kGlobalCtx2", "by_key": {"CBPerDevice": [2097152], "CmdStream": [2097152], "ConstBuf": [0], "Init": [2097152], "Input": [2097152], "Intermediate": [2097152], "Kernel": [268435456], "Output": [2097152]}}}
+== load_global
+481.32 463.06 394.09 462/7192 4115884
+RuntimeError: SYS_TASK_ABORTED: Task aborted.  An error occurred during the execution of a task on the device. (code: 3)
+== cached_then_fresh
+479.17 463.48 395.33 471/7109 4116680
+RuntimeError: SYS_TASK_ABORTED: Task aborted.  An error occurred during the execution of a task on the device. (code: 3)
+DONE
+
