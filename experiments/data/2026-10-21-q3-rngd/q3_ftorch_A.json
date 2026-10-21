@@ -1,0 +1,65 @@
+{
+ "mode": "A",
+ "device": "npu0",
+ "ordinal": 0,
+ "weights_gib": 2.0,
+ "versions": {
+  "furiosa-torch": "2026.2.0",
+  "torch": "2.10.0+cpu"
+ },
+ "loadavg": [
+  "617.71",
+  "638.62",
+  "640.10"
+ ],
+ "steps": [
+  {
+   "step": "start",
+   "capacity": {
+    "chunks": 189,
+    "gib": 47.25,
+    "stop": "OutOfMemoryError"
+   }
+  },
+  {
+   "step": "weights uploaded",
+   "s": 0.59,
+   "capacity": {
+    "chunks": 181,
+    "gib": 45.25,
+    "stop": "OutOfMemoryError"
+   }
+  },
+  {
+   "step": "graph b1 compiled, loaded, run",
+   "compile_s": 66.7,
+   "first_run_s": 0.011,
+   "max_abs_err": 0.05126953125,
+   "capacity": {
+    "chunks": 180,
+    "gib": 45.0,
+    "stop": "OutOfMemoryError"
+   }
+  },
+  {
+   "step": "graph b4 compiled, loaded, run",
+   "compile_s": 274.7,
+   "first_run_s": 0.013,
+   "max_abs_err": 0.05224609375,
+   "capacity": {
+    "chunks": 180,
+    "gib": 45.0,
+    "stop": "OutOfMemoryError"
+   }
+  },
+  {
+   "step": "b1 again",
+   "max_abs_err": 0.05126953125,
+   "capacity": {
+    "chunks": 180,
+    "gib": 45.0,
+    "stop": "OutOfMemoryError"
+   }
+  }
+ ]
+}

@@ -126,7 +126,11 @@ To: Rebellions (rebel-compiler / runtime). Also relevant to Optimus Prime once i
 > switching of batch and sequence-length graphs (Issue #5) without reloading ≈ 14 GB per variant (26–56 s measured in
 > Q4) or doubling device memory.
 
-## RNGD (survey only, no card was free)
+## RNGD (survey; measured later)
+
+Measured on 2026-10-21 once a card was assigned: [2026-10-21-q3-rngd-furiosa-torch.md](2026-10-21-q3-rngd-furiosa-torch.md)
+(furiosa-torch, weights as device-tensor inputs: a later-compiled graph uses them with no second copy). The survey below
+was written before that run.
 
 All three RNGD cards on the node were held by Kubernetes pods (1 + 2 `furiosa.ai/rngd`) during this work, so nothing
 was run on RNGD.
