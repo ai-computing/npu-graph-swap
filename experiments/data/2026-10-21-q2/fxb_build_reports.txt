@@ -1,0 +1,137 @@
+O0 rc=0 build_s=1452
+O1 rc=0 build_s=1735
+O2 rc=0 build_s=1996
+O3 rc=0 build_s=2304
+===== O0
+  Build Report:
+    Duration     Status  Kernel                                        Bucket
+  ──────────  ─────────  ───────────────────────────────────────────── ────────────────────
+     24m 10s  succeeded  mid_tokenwise                                 tw1024
+     22m 57s  succeeded  last_tokenwise_with_lm_head                   tw1024
+      12m 8s  succeeded  first_tokenwise                               tw1024
+      6m 53s  succeeded  full_attention                                b1_a1024_kv0
+      2m 12s  succeeded  last_tokenwise_with_lm_head                   tw1
+      1m 57s  succeeded  full_attention                                b1_a1024_kv768
+       37.9s  succeeded  mid_tokenwise                                 tw1
+       27.0s  succeeded  full_attention                                b1_a1024_kv1023
+       26.1s  succeeded  first_tokenwise                               tw1
+  ──────────  ─────────  ─────────────────────────────────────────────
+     71m 50s             total (9 succeeded, 0 failed, concurrency=4)
+Artifact Build Completed
+  ── Buckets (5 total, 9 kernels) ─────────────────────────────────────────
+     71m 50s             total (9 succeeded, 0 failed, concurrency=4)
+===== O1
+  Build Report:
+    Duration     Status  Kernel                                        Bucket
+  ──────────  ─────────  ───────────────────────────────────────────── ────────────────────
+     24m 44s  succeeded  mid_tokenwise                                 tw1024
+     17m 55s  succeeded  last_tokenwise_with_lm_head                   tw1024
+      17m 6s  succeeded  mid_tokenwise                                 tw16
+     14m 58s  succeeded  last_tokenwise_with_lm_head                   tw16
+     10m 57s  succeeded  first_tokenwise                               tw1024
+       3m 2s  succeeded  first_tokenwise                               tw16
+       1m 7s  succeeded  full_attention                                b1_a1024_kv896
+       1m 0s  succeeded  full_attention                                b1_a256_kv128
+       58.9s  succeeded  full_attention                                b1_a256_kv0
+       40.6s  succeeded  mid_tokenwise                                 tw1
+       25.0s  succeeded  first_tokenwise                               tw1
+        1.9s  succeeded  last_tokenwise_with_lm_head                   tw1
+        0.3s  succeeded  full_attention                                b1_a1024_kv1023
+        0.3s  succeeded  full_attention                                b1_a1024_kv0
+        0.2s  succeeded  full_attention                                b1_a1024_kv768
+  ──────────  ─────────  ─────────────────────────────────────────────
+     92m 59s             total (15 succeeded, 0 failed, concurrency=4)
+Artifact Build Completed
+  ── Buckets (9 total, 15 kernels) ────────────────────────────────────────
+     92m 59s             total (15 succeeded, 0 failed, concurrency=4)
+===== O2
+  Build Report:
+    Duration     Status  Kernel                                        Bucket
+  ──────────  ─────────  ───────────────────────────────────────────── ────────────────────
+     18m 41s  succeeded  mid_tokenwise                                 tw1024
+     16m 13s  succeeded  mid_tokenwise                                 tw16
+     15m 53s  succeeded  mid_tokenwise                                 tw64
+     12m 55s  succeeded  last_tokenwise_with_lm_head                   tw1024
+      12m 6s  succeeded  first_tokenwise                               tw1024
+      11m 4s  succeeded  mid_tokenwise                                 tw4
+     10m 35s  succeeded  last_tokenwise_with_lm_head                   tw64
+      8m 29s  succeeded  last_tokenwise_with_lm_head                   tw4
+      4m 25s  succeeded  first_tokenwise                               tw64
+      2m 53s  succeeded  first_tokenwise                               tw16
+      1m 46s  succeeded  full_attention                                b1_a512_kv384
+      1m 23s  succeeded  full_attention                                b1_a512_kv256
+      1m 22s  succeeded  full_attention                                b1_a512_kv0
+       59.1s  succeeded  first_tokenwise                               tw4
+       47.1s  succeeded  full_attention                                b1_a128_kv0
+       29.1s  succeeded  first_tokenwise                               tw1
+        0.7s  succeeded  full_attention                                b1_a1024_kv1023
+        0.5s  succeeded  full_attention                                b1_a1024_kv0
+        0.4s  succeeded  last_tokenwise_with_lm_head                   tw1
+        0.3s  succeeded  full_attention                                b1_a256_kv128
+        0.3s  succeeded  full_attention                                b1_a256_kv0
+        0.3s  succeeded  mid_tokenwise                                 tw1
+        0.3s  succeeded  full_attention                                b1_a1024_kv768
+        0.2s  succeeded  last_tokenwise_with_lm_head                   tw16
+        0.2s  succeeded  full_attention                                b1_a1024_kv896
+  ──────────  ─────────  ─────────────────────────────────────────────
+    120m 10s             total (25 succeeded, 0 failed, concurrency=4)
+Artifact Build Completed
+  ── Buckets (15 total, 25 kernels) ───────────────────────────────────────
+    120m 10s             total (25 succeeded, 0 failed, concurrency=4)
+===== O3
+  Build Report:
+    Duration     Status  Kernel                                        Bucket
+  ──────────  ─────────  ───────────────────────────────────────────── ────────────────────
+     12m 54s  succeeded  mid_tokenwise                                 tw16
+     11m 48s  succeeded  mid_tokenwise                                 tw8
+     11m 27s  succeeded  mid_tokenwise                                 tw4
+     11m 24s  succeeded  first_tokenwise                               tw1024
+     10m 59s  succeeded  mid_tokenwise                                 tw32
+      10m 5s  succeeded  mid_tokenwise                                 tw128
+      9m 55s  succeeded  mid_tokenwise                                 tw64
+      9m 31s  succeeded  mid_tokenwise                                 tw256
+       7m 0s  succeeded  first_tokenwise                               tw256
+      6m 53s  succeeded  first_tokenwise                               tw128
+      6m 33s  succeeded  last_tokenwise_with_lm_head                   tw128
+      6m 27s  succeeded  last_tokenwise_with_lm_head                   tw32
+       6m 9s  succeeded  last_tokenwise_with_lm_head                   tw8
+      5m 40s  succeeded  last_tokenwise_with_lm_head                   tw256
+       5m 0s  succeeded  first_tokenwise                               tw64
+       4m 5s  succeeded  first_tokenwise                               tw32
+      3m 13s  succeeded  first_tokenwise                               tw16
+      1m 33s  succeeded  first_tokenwise                               tw8
+       1m 5s  succeeded  first_tokenwise                               tw4
+       25.0s  succeeded  first_tokenwise                               tw1
+       14.8s  succeeded  full_attention                                b8_a1024_kv1023
+        0.9s  succeeded  mid_tokenwise                                 tw1
+        0.3s  succeeded  last_tokenwise_with_lm_head                   tw64
+        0.2s  succeeded  last_tokenwise_with_lm_head                   tw4
+        0.2s  succeeded  mid_tokenwise                                 tw1024
+        0.2s  succeeded  last_tokenwise_with_lm_head                   tw1
+        0.2s  succeeded  full_attention                                b1_a1024_kv896
+        0.2s  succeeded  full_attention                                b1_a1024_kv1023
+        0.2s  succeeded  full_attention                                b1_a256_kv128
+        0.2s  succeeded  last_tokenwise_with_lm_head                   tw16
+        0.2s  succeeded  last_tokenwise_with_lm_head                   tw1024
+        0.2s  succeeded  full_attention                                b1_a512_kv0
+        0.2s  succeeded  full_attention                                b1_a1024_kv0
+        0.2s  succeeded  full_attention                                b1_a512_kv384
+        0.2s  succeeded  full_attention                                b1_a128_kv0
+        0.2s  succeeded  full_attention                                b1_a256_kv0
+        0.2s  succeeded  full_attention                                b1_a1024_kv768
+        0.2s  succeeded  full_attention                                b1_a512_kv256
+  ──────────  ─────────  ─────────────────────────────────────────────
+    142m 34s             total (38 succeeded, 0 failed, concurrency=4)
+Artifact Build Completed
+  ── Buckets (20 total, 38 kernels) ───────────────────────────────────────
+    142m 34s             total (38 succeeded, 0 failed, concurrency=4)
+===== monitor
+08:36:13 load=625.57 rss_gb=20
+08:41:14 load=967.68 rss_gb=42
+08:46:14 load=749.62 rss_gb=46
+08:51:14 load=675.10 rss_gb=57
+08:56:14 load=568.41 rss_gb=59
+09:01:15 load=599.36 rss_gb=42
+09:06:15 load=491.36 rss_gb=24
+09:11:15 load=375.98 rss_gb=10
+
