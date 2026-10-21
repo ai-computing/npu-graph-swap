@@ -74,4 +74,4 @@ Swap = destroy + create + first run = **1.2–1.9 s** for ≈ 13–14 GiB.
 
 Limits: one card, one model, one run per cache state for the full reload; the host was at load ≈ 470, so the host
 parse times are pessimistic. The cold run uses a new copy whose pages were dropped, which is equivalent to a cold
-file but not to a cold machine (the driver and Python modules were warm). RNGD part of Q4: not run (see Issue #4).
+file but not to a cold machine (the driver and Python modules were warm). RNGD part of Q4: [2026-10-21-q4-rngd-reload.md](2026-10-21-q4-rngd-reload.md).
