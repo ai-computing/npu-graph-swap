@@ -35,6 +35,11 @@ NPU는 길이 구간·배치마다 미리 컴파일한 그래프로 동작합니
 
 질문마다 가설을 담은 Issue가 있고, 실행마다 `experiments/`에 기록을 남깁니다.
 
+[공통 교체 벤치마크](experiments/README.md#common-replacement-benchmark-issue-12)는 ATOM·RNGD에서
+전체 복원, Onggi delta 복원, 지원되는 상주 그래프 선택을 같은 절차로 비교합니다.
+파일 복원·런타임 로딩·첫 정상 응답 시간을 나누며, 미지원 경로와 정확성 실패도 기록합니다.
+파일 delta 복원이 장치 메모리의 부분 로딩을 뜻하지는 않습니다.
+
 ## 결과의 행방
 
 - 가능 → 엔진용 명세: [Optimus Prime](https://github.com/ai-computing/aicomp)에 그래프 전환 기능 요청(이 저장소는 엔진·벤더

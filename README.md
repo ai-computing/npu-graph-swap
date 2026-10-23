@@ -36,6 +36,12 @@ and keeping two variants warm doubles device memory.
 
 Each question is an Issue with a hypothesis; each run is a record in `experiments/`.
 
+The [common replacement benchmark](experiments/README.md#common-replacement-benchmark-issue-12)
+compares full restore, Onggi delta restore, and supported resident selection on
+ATOM/RNGD, separating file restore, runtime loading and the first checked response.
+It reports unsupported paths and correctness failures explicitly; file delta
+restoration does not imply device-memory delta loading.
+
 ## Where results go
 
 - Possible → a spec for the engine: graph switching in [Optimus Prime](https://github.com/ai-computing/aicomp) as a
