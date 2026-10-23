@@ -1,0 +1,327 @@
+{
+  "experiment": "native-atom-shared-session",
+  "complete": true,
+  "ok": true,
+  "provenance": {
+    "repository": "https://github.com/ai-computing/rngd-pd",
+    "source_revision": "da85c80ba5f0eb979d32bbcbbbcd4b1de13b0c13",
+    "source_branch": "validation/prepared-serving-20261023",
+    "source_pr": "https://github.com/ai-computing/rngd-pd/pull/27",
+    "archive_sha256": "77373ae7dd3ef901635431f41221293005037de4524881111f9364a69efcfae3",
+    "source_sha256": {
+      "rngd_pd/__init__.py": "c75dc2ea438ba2f931728325e28fdfe882e8b71dd6b4ec68c2ad01d2613319e4",
+      "rngd_pd/swap/bench_atom_bundles.py": "05091e57e43fe6121babef2e53ebf23f7838741da7e2b27db220c762ff3d316c",
+      "rngd_pd/swap/atom_bundles.py": "7e5216625f33470dfbddcbd41cb8b154488a7573a5661ca757037cb30c70aabb",
+      "rngd_pd/swap/atom.py": "19b2f4256f0f04f68729628a975ed2c46039321b8524a7a459dfb913259d2c23",
+      "rngd_pd/swap/__init__.py": "f2a74d6cd155c265a81369a73ce750b0991979ab43ab08c7c353bbd143814597",
+      "rngd_pd/swap/variants.py": "a1e772221226b042b97ea1b046e067a72709f94886db5610a5b2a9732ce6e744"
+    },
+    "original_result_sha256": "4454939a250dbec122800b01b312f3d9c240f335305aae40df69add8f22797d5",
+    "original_evidence_sha256": "b12a5da40f930080d107f6296e8546949b4264b00fb7a83240a71987c5bf6a44",
+    "start_utc": "2026-10-23T04:49:48.395022+00:00",
+    "end_utc": "2026-10-23T04:51:14.180651+00:00",
+    "host_loadavg_start": [
+      83.79248046875,
+      74.34423828125,
+      82.08154296875
+    ],
+    "host_loadavg_end": [
+      81.40234375,
+      73.732421875,
+      81.0
+    ]
+  },
+  "config": {
+    "device_index": 0,
+    "variants": [
+      "B1,S512",
+      "B4,S512"
+    ],
+    "tokens_per_prompt": 8,
+    "rounds": 1,
+    "prompt_token_ids": [
+      128000,
+      791,
+      6864,
+      315,
+      9822,
+      374
+    ],
+    "bundle_manifest": "sha256:c28156f5d70f5da1e9e201a526e3b0135b9410414fc3b83daa9838396172ab98",
+    "command": "python -m rngd_pd.swap.bench_atom_bundles --bundle RESTORED_BUNDLE --variants B1,S512 B4,S512 --device 0 --tokens 8 --rounds 1 --out native-atom.json",
+    "environment": {
+      "OMP_NUM_THREADS": "4",
+      "MKL_NUM_THREADS": "4",
+      "HF_HUB_OFFLINE": "1"
+    }
+  },
+  "environment": {
+    "node_alias": "npu-node-1",
+    "model": "RBLN-CA22, 15.7 GiB",
+    "versions": {
+      "torch-rbln": "0.2.2",
+      "rebel-compiler": "0.11.0",
+      "optimum-rbln": "0.11.0.post1",
+      "transformers": "5.8.1"
+    },
+    "torch_runtime": "2.11.0+cpu",
+    "driver_firmware": {
+      "kernel_version": "3.0.0",
+      "fw_ver": "3.0.0",
+      "smc_ver": "3.0.0"
+    }
+  },
+  "timing_scope": "Native SDK first generated batch token via streamer; later tokens checked for parity but excluded from TTFT. Fresh starts at bundle load, not process launch. Separate from common-runner whole-batch response.",
+  "cleanup": {
+    "worker_exit": 0,
+    "post_run_device_contexts": "none listed",
+    "firmware_release_proven": false
+  },
+  "result": {
+    "fresh": {
+      "B1-S512-g8": {
+        "prepared": true,
+        "prepare_s": 21.066053610062227,
+        "variant": "B1-S512-g8",
+        "bundle": "main",
+        "strategy": "full-load",
+        "weights_uploaded_on_swap": true,
+        "swap_s": 21.066637452924624,
+        "tokens": [
+          [
+            12366,
+            13,
+            12366,
+            374,
+            3967,
+            439,
+            279,
+            4409
+          ]
+        ],
+        "prompt_ttft_s": 0.08816348807886243,
+        "request_to_first_token_s": 21.154800941003487,
+        "request_seconds": 21.626880393945612
+      },
+      "B4-S512-g8": {
+        "prepared": true,
+        "prepare_s": 21.939396739006042,
+        "variant": "B4-S512-g8",
+        "bundle": "main",
+        "strategy": "full-load",
+        "weights_uploaded_on_swap": true,
+        "swap_s": 21.940036171930842,
+        "tokens": [
+          [
+            12366,
+            13,
+            12366,
+            374,
+            3967,
+            439,
+            279,
+            4409
+          ],
+          [
+            12366,
+            13,
+            12366,
+            374,
+            3967,
+            439,
+            279,
+            4409
+          ],
+          [
+            12366,
+            13,
+            12366,
+            374,
+            3967,
+            439,
+            279,
+            4409
+          ],
+          [
+            12366,
+            13,
+            12366,
+            374,
+            3967,
+            439,
+            279,
+            4409
+          ]
+        ],
+        "prompt_ttft_s": 0.3039339450187981,
+        "request_to_first_token_s": 22.24397011694964,
+        "request_seconds": 22.72602632304188
+      }
+    },
+    "swaps": [
+      {
+        "prepared": false,
+        "prepare_s": 0.0,
+        "variant": "B1-S512-g8",
+        "bundle": "main",
+        "strategy": "shared-session",
+        "weights_uploaded_on_swap": false,
+        "swap_s": 2.6399968191981316e-05,
+        "round": 0,
+        "prompt_ttft_s": 0.09447476698551327,
+        "tokens": [
+          [
+            12366,
+            13,
+            12366,
+            374,
+            3967,
+            439,
+            279,
+            4409
+          ]
+        ],
+        "request_to_first_token_s": 0.09450116695370525,
+        "tokens_equal_fresh": true
+      },
+      {
+        "prepared": false,
+        "prepare_s": 0.0,
+        "variant": "B4-S512-g8",
+        "bundle": "main",
+        "strategy": "shared-session",
+        "weights_uploaded_on_swap": false,
+        "swap_s": 5.3431023843586445e-05,
+        "round": 0,
+        "prompt_ttft_s": 0.2837077899603173,
+        "tokens": [
+          [
+            12366,
+            13,
+            12366,
+            374,
+            3967,
+            439,
+            279,
+            4409
+          ],
+          [
+            12366,
+            13,
+            12366,
+            374,
+            3967,
+            439,
+            279,
+            4409
+          ],
+          [
+            12366,
+            13,
+            12366,
+            374,
+            3967,
+            439,
+            279,
+            4409
+          ],
+          [
+            12366,
+            13,
+            12366,
+            374,
+            3967,
+            439,
+            279,
+            4409
+          ]
+        ],
+        "request_to_first_token_s": 0.2837612209841609,
+        "tokens_equal_fresh": true
+      }
+    ],
+    "initial_load": {
+      "prepared": true,
+      "prepare_s": 31.685402426985092,
+      "variant": "B1-S512-g8",
+      "bundle": "main",
+      "strategy": "full-load",
+      "weights_uploaded_on_swap": true,
+      "swap_s": 31.6861842230428
+    },
+    "allocations": {
+      "main": [
+        {
+          "CBPerDevice": [
+            2097152
+          ],
+          "CmdStream": [
+            4194304
+          ],
+          "ConstBuf": [
+            4194304
+          ],
+          "DramTensor": [
+            268435456
+          ],
+          "Init": [
+            33554432
+          ],
+          "Input": [
+            2097152
+          ],
+          "Intermediate": [
+            2097152
+          ],
+          "Kernel": [
+            15011414016
+          ],
+          "Output": [
+            2097152
+          ]
+        },
+        {
+          "CBPerDevice": [
+            2097152
+          ],
+          "CmdStream": [
+            4194304
+          ],
+          "ConstBuf": [
+            2097152
+          ],
+          "Init": [
+            90177536
+          ],
+          "Input": [
+            2097152
+          ],
+          "Output": [
+            2097152
+          ]
+        },
+        {
+          "CBPerDevice": [
+            2097152
+          ],
+          "CmdStream": [
+            4194304
+          ],
+          "ConstBuf": [
+            2097152
+          ],
+          "Init": [
+            33554432
+          ],
+          "Input": [
+            2097152
+          ],
+          "Output": [
+            2097152
+          ]
+        }
+      ]
+    }
+  },
+  "sanitization": "Site paths, wrapper scripts and raw logs omitted; every numeric native result and token ID retained."
+}

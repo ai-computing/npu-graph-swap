@@ -1,0 +1,587 @@
+{
+  "schema_version": 1,
+  "complete": true,
+  "ok": true,
+  "implementation_commit": "0d7016a4332ebcab2ae9b067a99d6e2b264d80a6",
+  "original_result_sha256": "a1ac6a2723a3160d6eddee9d3b2be40ebc25e45b96ba096956bc0a409b1226cc",
+  "config": {
+    "device": "atom",
+    "device_index": 0,
+    "repetitions": 2,
+    "modes": [
+      "full",
+      "delta",
+      "resident"
+    ],
+    "variants": [
+      {
+        "name": "b1",
+        "ref": "sha256:c28156f5d70f5da1e9e201a526e3b0135b9410414fc3b83daa9838396172ab98",
+        "runtime": {
+          "backend": "optimum",
+          "model": "model"
+        },
+        "request": {
+          "prompts": [
+            "Amber birds migrate south every autumn because"
+          ],
+          "max_new_tokens": 8
+        }
+      },
+      {
+        "name": "b4",
+        "ref": "sha256:c28156f5d70f5da1e9e201a526e3b0135b9410414fc3b83daa9838396172ab98",
+        "runtime": {
+          "backend": "optimum",
+          "model": "model"
+        },
+        "request": {
+          "prompts": [
+            "Copper engines carry heavy freight because",
+            "Silver rivers flow through the valley where",
+            "Violet gardens attract bees during spring because",
+            "Golden clocks measure the passing hours while"
+          ],
+          "max_new_tokens": 8
+        }
+      }
+    ],
+    "transitions": [
+      {
+        "source": "b1",
+        "target": "b4"
+      }
+    ],
+    "onggi": "onggi",
+    "store": "REPLACE_WITH_RECREATED_STORE"
+  },
+  "metadata": {
+    "python": "3.10.12",
+    "platform": "Linux-6.8.0-40-generic-x86_64-with-glibc2.35",
+    "runner_sha256": "d2e05cef4278d25a664ca86235c8b3f3b394b83408abe25c98db900e57454640",
+    "adapters_sha256": "20ec8ea7a3fc428f08b6f76592c53235d840c20127ce62611e6c76447cf66fa3"
+  },
+  "cache_policy": "OS page cache as found, primed by base restore; no Onggi chunk cache",
+  "timing_scope": "old runtime release through first checked target response; base preparation excluded",
+  "summary": [
+    {
+      "source": "b1",
+      "target": "b4",
+      "mode": "full",
+      "samples": 2,
+      "failed": 0,
+      "unsupported": 0,
+      "release_s": {
+        "p50": 0.6964675060007721,
+        "p95": 0.8488224040484056
+      },
+      "restore_s": {
+        "p50": 33.421692520030774,
+        "p95": 46.06249141902663
+      },
+      "load_s": {
+        "p50": 15.535722473054193,
+        "p95": 23.88598671008367
+      },
+      "first_response_s": {
+        "p50": 0.7641393489902839,
+        "p95": 0.7702689419966191
+      },
+      "end_to_end_s": {
+        "p50": 50.57038461591583,
+        "p95": 71.41523524699733
+      }
+    },
+    {
+      "source": "b1",
+      "target": "b4",
+      "mode": "delta",
+      "samples": 2,
+      "failed": 0,
+      "unsupported": 0,
+      "release_s": {
+        "p50": 0.8332496869843453,
+        "p95": 1.3074111230671406
+      },
+      "restore_s": {
+        "p50": 8.108952858950943,
+        "p95": 13.152693215990439
+      },
+      "load_s": {
+        "p50": 20.12395442207344,
+        "p95": 23.880179535015486
+      },
+      "first_response_s": {
+        "p50": 0.7579147949581966,
+        "p95": 0.7743220629636198
+      },
+      "end_to_end_s": {
+        "p50": 29.824092783033848,
+        "p95": 39.11462178803049
+      }
+    },
+    {
+      "source": "b1",
+      "target": "b4",
+      "mode": "resident",
+      "samples": 2,
+      "failed": 0,
+      "unsupported": 0,
+      "release_s": {
+        "p50": 0.0,
+        "p95": 0.0
+      },
+      "restore_s": {
+        "p50": 0.0,
+        "p95": 0.0
+      },
+      "load_s": {
+        "p50": 0.0,
+        "p95": 0.0
+      },
+      "first_response_s": {
+        "p50": 0.7575371620478109,
+        "p95": 0.7600771060679108
+      },
+      "end_to_end_s": {
+        "p50": 0.7575578020187095,
+        "p95": 0.7600989359198138
+      }
+    }
+  ],
+  "trials": [
+    {
+      "source": "b1",
+      "target": "b4",
+      "mode": "full",
+      "status": "ok",
+      "cleanup": "ok",
+      "release_s": 0.6964675060007721,
+      "pull_stats": {
+        "files": 8,
+        "bytes": 18347319308,
+        "read_bytes": 10637033436,
+        "cache_bytes": 0,
+        "peer_bytes": 0,
+        "peer_chunks": 0,
+        "cached": 0,
+        "reused": 0,
+        "base_best": 0,
+        "local_bytes": 0,
+        "ranges": 815,
+        "duration_ns": 45860523017
+      },
+      "restore_s": 46.06249141902663,
+      "load_s": 23.88598671008367,
+      "adapter_timings": {
+        "runtime_create_s": 23.88488166499883
+      },
+      "first_response_s": 0.7702689419966191,
+      "end_to_end_s": 71.41523524699733,
+      "response": {
+        "kind": "atom-token-ids",
+        "value": [
+          [
+            814,
+            527,
+            810,
+            27220,
+            323,
+            1397,
+            2753,
+            13709
+          ],
+          [
+            358,
+            48383,
+            345,
+            35897,
+            76461,
+            287,
+            7479,
+            11
+          ],
+          [
+            814,
+            3493,
+            264,
+            9257,
+            2592,
+            315,
+            308,
+            39916
+          ],
+          [
+            279,
+            7160,
+            374,
+            49025,
+            76389,
+            13,
+            578,
+            21411
+          ]
+        ]
+      },
+      "repetition": 0,
+      "worker_exit": 0,
+      "correctness": "match"
+    },
+    {
+      "source": "b1",
+      "target": "b4",
+      "mode": "delta",
+      "status": "ok",
+      "cleanup": "ok",
+      "release_s": 1.3074111230671406,
+      "pull_stats": {
+        "files": 8,
+        "bytes": 18347319308,
+        "read_bytes": 0,
+        "cache_bytes": 0,
+        "peer_bytes": 0,
+        "peer_chunks": 0,
+        "cached": 0,
+        "base": "sha256:c28156f5d70f5da1e9e201a526e3b0135b9410414fc3b83daa9838396172ab98",
+        "reused": 18347319308,
+        "base_best": 18347319308,
+        "local_bytes": 0,
+        "ranges": 0,
+        "duration_ns": 12768102823
+      },
+      "restore_s": 13.152693215990439,
+      "load_s": 23.880179535015486,
+      "adapter_timings": {
+        "runtime_create_s": 23.879509120015427
+      },
+      "first_response_s": 0.7743220629636198,
+      "end_to_end_s": 39.11462178803049,
+      "response": {
+        "kind": "atom-token-ids",
+        "value": [
+          [
+            814,
+            527,
+            810,
+            27220,
+            323,
+            1397,
+            2753,
+            13709
+          ],
+          [
+            358,
+            48383,
+            345,
+            35897,
+            76461,
+            287,
+            7479,
+            11
+          ],
+          [
+            814,
+            3493,
+            264,
+            9257,
+            2592,
+            315,
+            308,
+            39916
+          ],
+          [
+            279,
+            7160,
+            374,
+            49025,
+            76389,
+            13,
+            578,
+            21411
+          ]
+        ]
+      },
+      "repetition": 0,
+      "worker_exit": 0,
+      "correctness": "match"
+    },
+    {
+      "source": "b1",
+      "target": "b4",
+      "mode": "resident",
+      "status": "ok",
+      "cleanup": "ok",
+      "release_s": 0.0,
+      "restore_s": 0.0,
+      "load_s": 0.0,
+      "adapter_timings": {},
+      "first_response_s": 0.7600771060679108,
+      "end_to_end_s": 0.7600989359198138,
+      "response": {
+        "kind": "atom-token-ids",
+        "value": [
+          [
+            814,
+            527,
+            810,
+            27220,
+            323,
+            1397,
+            2753,
+            13709
+          ],
+          [
+            358,
+            48383,
+            345,
+            35897,
+            76461,
+            287,
+            7479,
+            11
+          ],
+          [
+            814,
+            3493,
+            264,
+            9257,
+            2592,
+            315,
+            308,
+            39916
+          ],
+          [
+            279,
+            7160,
+            374,
+            49025,
+            76389,
+            13,
+            578,
+            21411
+          ]
+        ]
+      },
+      "repetition": 0,
+      "worker_exit": 0,
+      "correctness": "match"
+    },
+    {
+      "source": "b1",
+      "target": "b4",
+      "mode": "delta",
+      "status": "ok",
+      "cleanup": "ok",
+      "release_s": 0.8332496869843453,
+      "pull_stats": {
+        "files": 8,
+        "bytes": 18347319308,
+        "read_bytes": 0,
+        "cache_bytes": 0,
+        "peer_bytes": 0,
+        "peer_chunks": 0,
+        "cached": 0,
+        "base": "sha256:c28156f5d70f5da1e9e201a526e3b0135b9410414fc3b83daa9838396172ab98",
+        "reused": 18347319308,
+        "base_best": 18347319308,
+        "local_bytes": 0,
+        "ranges": 0,
+        "duration_ns": 7900308746
+      },
+      "restore_s": 8.108952858950943,
+      "load_s": 20.12395442207344,
+      "adapter_timings": {
+        "runtime_create_s": 20.12349321192596
+      },
+      "first_response_s": 0.7579147949581966,
+      "end_to_end_s": 29.824092783033848,
+      "response": {
+        "kind": "atom-token-ids",
+        "value": [
+          [
+            814,
+            527,
+            810,
+            27220,
+            323,
+            1397,
+            2753,
+            13709
+          ],
+          [
+            358,
+            48383,
+            345,
+            35897,
+            76461,
+            287,
+            7479,
+            11
+          ],
+          [
+            814,
+            3493,
+            264,
+            9257,
+            2592,
+            315,
+            308,
+            39916
+          ],
+          [
+            279,
+            7160,
+            374,
+            49025,
+            76389,
+            13,
+            578,
+            21411
+          ]
+        ]
+      },
+      "repetition": 1,
+      "worker_exit": 0,
+      "correctness": "match"
+    },
+    {
+      "source": "b1",
+      "target": "b4",
+      "mode": "resident",
+      "status": "ok",
+      "cleanup": "ok",
+      "release_s": 0.0,
+      "restore_s": 0.0,
+      "load_s": 0.0,
+      "adapter_timings": {},
+      "first_response_s": 0.7575371620478109,
+      "end_to_end_s": 0.7575578020187095,
+      "response": {
+        "kind": "atom-token-ids",
+        "value": [
+          [
+            814,
+            527,
+            810,
+            27220,
+            323,
+            1397,
+            2753,
+            13709
+          ],
+          [
+            358,
+            48383,
+            345,
+            35897,
+            76461,
+            287,
+            7479,
+            11
+          ],
+          [
+            814,
+            3493,
+            264,
+            9257,
+            2592,
+            315,
+            308,
+            39916
+          ],
+          [
+            279,
+            7160,
+            374,
+            49025,
+            76389,
+            13,
+            578,
+            21411
+          ]
+        ]
+      },
+      "repetition": 1,
+      "worker_exit": 0,
+      "correctness": "match"
+    },
+    {
+      "source": "b1",
+      "target": "b4",
+      "mode": "full",
+      "status": "ok",
+      "cleanup": "ok",
+      "release_s": 0.8488224040484056,
+      "pull_stats": {
+        "files": 8,
+        "bytes": 18347319308,
+        "read_bytes": 10637033436,
+        "cache_bytes": 0,
+        "peer_bytes": 0,
+        "peer_chunks": 0,
+        "cached": 0,
+        "reused": 0,
+        "base_best": 0,
+        "local_bytes": 0,
+        "ranges": 815,
+        "duration_ns": 33318805548
+      },
+      "restore_s": 33.421692520030774,
+      "load_s": 15.535722473054193,
+      "adapter_timings": {
+        "runtime_create_s": 15.535293553955853
+      },
+      "first_response_s": 0.7641393489902839,
+      "end_to_end_s": 50.57038461591583,
+      "response": {
+        "kind": "atom-token-ids",
+        "value": [
+          [
+            814,
+            527,
+            810,
+            27220,
+            323,
+            1397,
+            2753,
+            13709
+          ],
+          [
+            358,
+            48383,
+            345,
+            35897,
+            76461,
+            287,
+            7479,
+            11
+          ],
+          [
+            814,
+            3493,
+            264,
+            9257,
+            2592,
+            315,
+            308,
+            39916
+          ],
+          [
+            279,
+            7160,
+            374,
+            49025,
+            76389,
+            13,
+            578,
+            21411
+          ]
+        ]
+      },
+      "repetition": 1,
+      "worker_exit": 0,
+      "correctness": "match"
+    }
+  ],
+  "sanitization": "Store/executable/session/site paths and raw worker logs omitted; numeric measurements and responses unchanged."
+}

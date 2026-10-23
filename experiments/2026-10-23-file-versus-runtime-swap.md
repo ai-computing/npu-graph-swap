@@ -75,6 +75,117 @@ All four measured outputs match the same full-mode fingerprint, and cleanup
 succeeded. [Raw numeric evidence and reproducible config](data/2026-10-23-common-swap/atom-raw.json)
 retain both samples; the excluded pilot was not selected for a favorable number.
 
+## ATOM: one Optimum bundle, B1 → B4 request
+
+Llama-3.1-8B, S512, one co-compiled Optimum bundle with decoder batches 1 and 4,
+18,347,319,308 artifact bytes including configuration/tokenizer. rebel 0.11.0,
+optimum-rbln 0.11.0.post1, torch-rbln 0.2.2 and PyTorch 2.11.0+cpu. The source
+and target use **the same manifest and runtime settings**; their batch requests
+differ. This is a zero-artifact-change restoration control and an intra-bundle
+resident request, not a demonstration of binding a separately compiled bundle.
+
+All target requests use four distinct prompts and up to eight greedy generated
+tokens per prompt; the source prompt has a different first word to limit shared
+prefix-cache effects. These runs produced eight tokens in every target row.
+Times below end at **whole batch completion**, not at its first token. More than
+one token is requested so execution includes decode as well as prefill.
+
+| Mode | Successful samples | Restore p50 / p95 (s) | Load p50 / p95 (s) | Replacement → batch completion p50 / p95 (s) |
+|---|---:|---:|---:|---:|
+| Full restoration | 2 | 33.422 / 46.062 | 15.536 / 23.886 | **50.570 / 71.415** |
+| Delta restoration | 2 | 8.109 / 13.153 | 20.124 / 23.880 | **29.824 / 39.115** |
+| Resident runtime | 2 | 0 / 0 | 0 / 0 | **0.7576 / 0.7601** |
+
+Delta left all 18,347,319,308 bytes in place and read 0 B of compressed store
+payload, compared with 10,637,033,436 B for full restoration. Metadata/base
+processing still took 8.1–13.2 s and Optimum model construction 20.1–23.9 s.
+Retaining the already loaded runtime avoided both stages. The small sample,
+OS/vendor caches and shared host prohibit a general speedup or SLO guarantee.
+
+All six target token sequences equal the full-mode reference, and every trial
+released its owner and removed its private artifacts. See
+[all samples and exact requests](data/2026-10-23-common-swap/atom-optimum.json).
+This positive control does not overturn the preceding shifted-artifact result:
+same-offset file reuse and resident runtime selection differ from reconstructing
+a separately compiled file whose matching bytes moved.
+
+## RNGD: compiled O0 → O3 artifact replacement
+
+Llama-3.1-8B-Instruct, the same checkpoint and maximum model length 2048, TP8;
+the O0 and O3 FXBs are genuinely different compiled artifacts. The source uses
+one prompt and the target four distinct prompts, with disjoint first words.
+Each target generated eight greedy tokens per row. furiosa-llm 2026.3.0,
+furiosa-torch 2026.2.0 and PyTorch 2.10.0+cu128 were installed; this adapter
+uses the vendor LLM API, not the custom furiosa-torch decode engine.
+
+| Mode | Successful samples | Restore p50 / p95 (s) | Load p50 / p95 (s) | Replacement → batch completion p50 / p95 (s) |
+|---|---:|---:|---:|---:|
+| Full restoration | 2 | 30.613 / 34.911 | 9.172 / 10.266 | **41.380 / 46.733** |
+| Delta restoration | 2 | 0.481 / 0.486 | 8.449 / 8.759 | **10.671 / 10.924** |
+
+The target contains **16,081,399,306 B**. Each delta trial left
+**16,069,722,669 B** at the same offsets and read **2,716,384 B** of compressed
+store payload, compared with **10,707,247,845 B** for each full restore. This
+same-offset file reuse is a positive result for local artifact restoration.
+It does **not** patch resident NPU weights: both modes release the source LLM,
+materialize target files and construct a new vendor LLM, including weight load.
+Runtime construction still took 8.4–8.8 s on the delta path.
+
+All four trial responses match the full-mode destination reference; all cleanup
+checks passed, the owner exited with code 0, and the post-run context listing
+was empty. [Every trial, token sequence and exact config](data/2026-10-23-common-swap/rngd-o0-o3.json)
+is retained. The two observations per mode are a smoke test; nearest-rank p95
+is simply the larger observation. No streaming TTFT or exact internal bucket
+selection is established by these whole-batch calls.
+
+## Native ATOM: prepared shared-session selection and prompt TTFT
+
+This separate run used the existing `rngd_pd.swap.bench_atom_bundles` harness,
+not the common file-restoration runner. The independently copied source is
+[`rngd-pd` revision da85c80](https://github.com/ai-computing/rngd-pd/commit/da85c80ba5f0eb979d32bbcbbbcd4b1de13b0c13),
+published on `validation/prepared-serving-20261023`
+([draft PR #27](https://github.com/ai-computing/rngd-pd/pull/27)). It loaded the
+same complete S512 Optimum bundle with co-compiled B1/B4 decoders and retained
+the prefill weight owner and all runtimes. The selected request batch determines
+the matching decoder. No independently compiled graph was rebound to another
+bundle's weights.
+
+One round used prompt IDs `[128000, 791, 6864, 315, 9822, 374]`, repeated across
+the selected batch, and eight greedy generated tokens per row. Each fresh
+baseline loaded the same complete bundle in a separate process. The native
+streamer measures the first generated batch token; subsequent tokens are checked
+for parity but excluded from TTFT.
+
+| Selected shape | Observations | Prepared selection (µs) | Prompt TTFT (ms) | Selection → first token (ms) | Fresh load → first token (s) |
+|---|---:|---:|---:|---:|---:|
+| B1/S512 | 1 | 26.4 | 94.5 | 94.5 | 21.155 |
+| B4/S512 | 1 | 53.4 | 283.7 | 283.8 | 22.244 |
+
+The B1 row reselects the initially loaded B1 shape; B4 is the actual B1 → B4
+transition. All 40 generated tokens across the two selected batches exactly
+match their respective fresh baselines. SDK allocation reports attribute
+15,011,414,016 B of Kernel weights to the prefill owner, with no Kernel entry
+on either decoder. Selection uploaded no weights. This establishes this
+bundle's prepared selection path, not changed-weight updates or arbitrary
+graph binding. One observation per shape cannot estimate a distribution.
+
+The native worker exited with code 0 and its post-run device-context listing
+was empty. [All fresh/selected tokens, timings, allocations and path-free source provenance](data/2026-10-23-common-swap/native-atom.json)
+are retained. Native teardown drops references without the common adapter's
+destructor-error guard; neither proves firmware-level release. These TTFT
+numbers must not be pooled with the common runner's whole-batch completion
+times. Fresh native timing starts at bundle loading and excludes process
+startup/imports.
+
+To reproduce this separate native measurement from the pinned source snapshot:
+
+```sh
+PYTHONPATH=SNAPSHOT/src OMP_NUM_THREADS=4 MKL_NUM_THREADS=4 HF_HUB_OFFLINE=1 \
+  python -m rngd_pd.swap.bench_atom_bundles --bundle RESTORED_BUNDLE \
+  --variants B1,S512 B4,S512 --device 0 --tokens 8 --rounds 1 \
+  --out native-atom.json
+```
+
 ## Reproduction and boundaries
 
 Use the published config in each JSON evidence file, recreate its immutable
@@ -103,4 +214,13 @@ Python destruction errors and construction failures stop the common runner
 conservatively, but GC cannot establish firmware-level release. No fatal DMA
 fault was injected on live hardware. Concurrent HTTP admission/draining,
 streaming TTFT, production rollout and arbitrary KV migration are outside this
-experiment.
+common-runner experiment. The separate native ATOM measurement above has its
+own explicit first-token timing scope.
+
+The RNGD same-artifact resident control and custom native RNGD benchmark were
+**not run**: further benchmark expansion stopped when the requested objective
+was clarified as actual updates to NPU-resident weights. Neither path is claimed
+as verified here. That device-update work is pending separately; file restore
+savings and unchanged-weight decoder selection do not satisfy it. This record
+preserves the completed measurements without extending them into an in-place
+NPU-update claim.

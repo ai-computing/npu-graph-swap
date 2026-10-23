@@ -6,6 +6,15 @@ conclusion, including when the answer is no. Node names use aliases (`npu-node-1
 
 ## Common replacement benchmark (Issue #12)
 
+The [completed experiment record](2026-10-23-file-versus-runtime-swap.md) links
+all trials for [raw ATOM](data/2026-10-23-common-swap/atom-raw.json),
+[Optimum ATOM](data/2026-10-23-common-swap/atom-optimum.json), and
+[RNGD O0 → O3](data/2026-10-23-common-swap/rngd-o0-o3.json). The separate
+[native ATOM evidence](data/2026-10-23-common-swap/native-atom.json) measures
+prepared selection and prompt TTFT, rather than whole-batch completion. The
+record distinguishes measured results from unrun RNGD resident/native paths
+and pending NPU-resident weight-update work.
+
 `scripts/swap_bench.py` connects artifact materialization to the first checked
 response on ATOM or RNGD. Python 3.10+ is required; the runner uses the standard
 library. Raw ATOM uses installed NumPy/rebel, Optimum ATOM uses optimum-rbln and

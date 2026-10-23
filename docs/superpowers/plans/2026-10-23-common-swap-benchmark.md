@@ -14,7 +14,7 @@
 
 - Experiments only; vendor and engine files stay untouched.
 - No shell commands, implicit device selection, shared mutable base, or cold-cache claims.
-- Distinguish ATOM model step from RNGD one-token batch response.
+- Distinguish raw ATOM model steps, generated-batch completion and native prompt TTFT.
 - Any failure, unverified output or cleanup error must produce nonzero exit.
 
 ## Review focus
@@ -49,8 +49,8 @@ Files: `experiments/configs/*`, experiment record/data, English/Korean READMEs, 
 
 - [x] Add placeholder configs, exact invocation/stage definitions, failure and cache-policy documentation.
 - [x] Exercise real Onggi full/delta restoration with byte-checked fixtures.
-- [ ] Run available device-allocated hardware trials; record unsupported/environment limitations and clean temporary resources.
-- [ ] Fresh independent review, meaningful fixes with regression tests, full suite, sensitive-data and diff checks; open a reviewable PR with evidence.
+- [x] Run available device-allocated hardware trials; record unsupported/environment limitations and clean temporary resources. Completed raw/Optimum ATOM and RNGD O0→O3 profiles, plus a separately scoped native ATOM run; RNGD resident/native paths were not run after the objective changed to resident-weight updates.
+- [x] Fresh independent review, meaningful fixes with regression tests, full suite, sensitive-data and diff checks; open a reviewable PR with evidence. PR #13 remains draft because the broader RNGD resident/native acceptance coverage is explicitly unverified; further device-update work is separate.
 
 ## Execution evidence
 
@@ -62,5 +62,5 @@ Files: `experiments/configs/*`, experiment record/data, English/Korean READMEs, 
 - Generation-limit regressions: both adapters rejected multi-token requests → passed with per-request limits and early EOS handling.
 - Python 3.10 test portability fixed after Linux exposed `TestCase.enterContext` as 3.11-only.
 - CLI integration proves six distinct worker PIDs, correctness-gated output and private artifact cleanup.
-- Full suite: 37 cases; Windows 35 passed/2 skipped, Linux Python 3.10 36 passed/1 opt-in Onggi test skipped. With actual Onggi enabled on Linux: all 37 passed, no skips, 1.555 s. Hardware evidence is recorded in `experiments/2026-10-23-file-versus-runtime-swap.md` as profiles finish.
+- Full suite: 37 cases; Windows 35 passed/2 skipped, Linux Python 3.10 36 passed/1 opt-in Onggi test skipped. With actual Onggi enabled on Linux: all 37 passed, no skips, 1.555 s. Python 3.10/3.12 CPU CI passed. Completed hardware evidence is recorded in `experiments/2026-10-23-file-versus-runtime-swap.md`; no further benchmark matrix is planned under this file-restoration task.
 - Review boundary: no firmware-release guarantee inferred from Python GC; disjoint hardware source/target prompt prefixes and explicit cache-scope disclosure are used instead of modifying vendor cache behavior.
