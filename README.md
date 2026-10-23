@@ -36,6 +36,19 @@ and keeping two variants warm doubles device memory.
 
 Each question is an Issue with a hypothesis; each run is a record in `experiments/`.
 
+The [common replacement benchmark](experiments/README.md#common-replacement-benchmark-issue-12)
+compares full restore, Onggi delta restore, and supported resident selection on
+ATOM/RNGD, separating file restore, runtime loading and the first checked response.
+It reports unsupported paths and correctness failures explicitly; file delta
+restoration does not imply device-memory delta loading.
+
+The [completed measurements](experiments/2026-10-23-file-versus-runtime-swap.md)
+retain the raw ATOM delta path's lack of a demonstrated local latency win,
+positive file-reuse results for ATOM Optimum and RNGD, and a separate native ATOM
+selection/TTFT run. All samples and tokens are linked there. Actual changes to
+NPU-resident weights remain separate work; the unrun RNGD resident/native paths
+are explicitly disclosed.
+
 ## Where results go
 
 - Possible → a spec for the engine: graph switching in [Optimus Prime](https://github.com/ai-computing/aicomp) as a

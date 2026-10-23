@@ -1,0 +1,13 @@
+{
+  "device": "atom",
+  "device_index": 0,
+  "onggi": "onggi",
+  "store": "REPLACE_WITH_DEDICATED_STORE",
+  "repetitions": 5,
+  "modes": ["full", "delta", "resident"],
+  "variants": [
+    {"name": "s512-b1", "ref": "sha256:0000000000000000000000000000000000000000000000000000000000000000", "runtime": {"graph": "model.rbln"}, "request": {}},
+    {"name": "s512-b4", "ref": "sha256:1111111111111111111111111111111111111111111111111111111111111111", "runtime": {"graph": "model.rbln"}, "request": {}}
+  ],
+  "transitions": [{"source": "s512-b1", "target": "s512-b4"}, {"source": "s512-b4", "target": "s512-b1"}]
+}

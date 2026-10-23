@@ -1,0 +1,97 @@
+{
+  "implementation_commit": "0d7016a4332ebcab2ae9b067a99d6e2b264d80a6",
+  "source_sha256": {
+    "swap_bench.py": "d2e05cef4278d25a664ca86235c8b3f3b394b83408abe25c98db900e57454640",
+    "swap_adapters.py": "20ec8ea7a3fc428f08b6f76592c53235d840c20127ce62611e6c76447cf66fa3"
+  },
+  "onggi": {
+    "commit": "05c97605b07882f9ceaaeb90b94878f8923f81cf",
+    "binary_sha256": "72267cec4503b002c846c74969d2c3a900082b2cce38f177bcbc6d512a9085c5",
+    "go_version": "1.27.3"
+  },
+  "cpu_tests": {
+    "windows_python_3_11": {
+      "cases": 37,
+      "passed": 35,
+      "skipped": 2
+    },
+    "linux_python_3_10": {
+      "cases": 37,
+      "passed": 36,
+      "skipped": 1
+    },
+    "linux_with_actual_onggi": {
+      "cases": 37,
+      "passed": 37,
+      "skipped": 0,
+      "elapsed_s": 1.555
+    },
+    "separate_onggi_integration": {
+      "cases": 1,
+      "passed": 1,
+      "elapsed_s": 0.515
+    },
+    "ci_python_versions": [
+      "3.10",
+      "3.12"
+    ]
+  },
+  "independent_review": {
+    "important_findings_fixed": 3,
+    "regressions": [
+      "constructor allocation followed by exception retains files and stops",
+      "ATOM destructor errors propagate through release guard",
+      "multi-token decoder probes with explicit completion-time scope"
+    ]
+  },
+  "hardware": {
+    "node_alias": "npu-node-1",
+    "cpu": "2 x AMD EPYC 9254, 96 CPUs",
+    "kernel": "6.8.0-40-generic",
+    "per_pod_cpu_limit": 4,
+    "per_pod_memory_limit": "64Gi",
+    "source_store_destination_same_fs": true,
+    "filesystem": "ext4 on LVM, backing disks report ROTA=0; NVMe not established",
+    "loadavg_sample": [
+      96.39501953125,
+      93.197265625,
+      88.10546875
+    ],
+    "atom": {
+      "model": "RBLN-CA22, 15.7 GiB",
+      "versions": {
+        "torch-rbln": "0.2.2",
+        "rebel-compiler": "0.11.0",
+        "optimum-rbln": "0.11.0.post1",
+        "transformers": "5.8.1"
+      },
+      "torch_runtime": "2.11.0+cpu",
+      "driver_firmware": {
+        "kernel_version": "3.0.0",
+        "fw_ver": "3.0.0",
+        "smc_ver": "3.0.0"
+      }
+    },
+    "rngd": {
+      "model": "RNGD, 47.5 GiB",
+      "versions": {
+        "furiosa-llm": "2026.3.0",
+        "furiosa-torch": "2026.2.0",
+        "transformers": "5.1.0"
+      },
+      "torch_runtime": "2.10.0+cu128",
+      "firmware": [
+        "2026.4.0"
+      ],
+      "driver_version": "not exposed by module version query"
+    },
+    "host_memory_bytes": 1623042936832
+  },
+  "limitations": [
+    "Local same-filesystem smoke, not network-store or cold-cache measurement",
+    "Imports and source preparation excluded from replacement interval",
+    "SDK-level model calls, not concurrent HTTP serving or streaming TTFT",
+    "GC release cannot prove firmware-level ownership release",
+    "No live fatal-DMA fault injection or vendor/engine patch"
+  ]
+}

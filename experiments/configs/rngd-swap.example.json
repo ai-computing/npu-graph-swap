@@ -1,0 +1,57 @@
+{
+  "device": "rngd",
+  "device_index": 0,
+  "onggi": "onggi",
+  "store": "REPLACE_WITH_DEDICATED_STORE",
+  "repetitions": 5,
+  "modes": [
+    "full",
+    "delta",
+    "resident"
+  ],
+  "variants": [
+    {
+      "name": "b1",
+      "ref": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+      "runtime": {
+        "model": "model",
+        "fxb": "model.fxb",
+        "max_model_len": 2048
+      },
+      "request": {
+        "prompts": [
+          "The capital of France is"
+        ],
+        "max_new_tokens": 8
+      }
+    },
+    {
+      "name": "b4",
+      "ref": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+      "runtime": {
+        "model": "model",
+        "fxb": "model.fxb",
+        "max_model_len": 2048
+      },
+      "request": {
+        "prompts": [
+          "Computers process instructions by",
+          "Water freezes when",
+          "Autumn leaves are",
+          "Korean greetings include"
+        ],
+        "max_new_tokens": 8
+      }
+    }
+  ],
+  "transitions": [
+    {
+      "source": "b1",
+      "target": "b4"
+    },
+    {
+      "source": "b4",
+      "target": "b1"
+    }
+  ]
+}

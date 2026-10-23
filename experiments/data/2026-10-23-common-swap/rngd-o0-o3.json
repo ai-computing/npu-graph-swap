@@ -1,0 +1,438 @@
+{
+  "schema_version": 1,
+  "complete": true,
+  "ok": true,
+  "implementation_commit": "0d7016a4332ebcab2ae9b067a99d6e2b264d80a6",
+  "original_result_sha256": "116adc949e024879c3e1aa056015c3579cc93e5dfc33c6cd398ad9a45fa67788",
+  "config": {
+    "device": "rngd",
+    "device_index": 0,
+    "repetitions": 2,
+    "modes": [
+      "full",
+      "delta"
+    ],
+    "variants": [
+      {
+        "name": "o0-b1",
+        "ref": "sha256:79ff4a809371ee7cd7c9dbbd4a9707f664e450642240e120d88acbaecd8d5c27",
+        "runtime": {
+          "model": "model",
+          "fxb": "model.fxb",
+          "max_model_len": 2048
+        },
+        "request": {
+          "prompts": [
+            "Amber birds migrate south every autumn because"
+          ],
+          "max_new_tokens": 8
+        }
+      },
+      {
+        "name": "o3-b4",
+        "ref": "sha256:d9382c5369d0d51864944c35390373bd5f6d23e588e6b69a5c9d6a61e17ec340",
+        "runtime": {
+          "model": "model",
+          "fxb": "model.fxb",
+          "max_model_len": 2048
+        },
+        "request": {
+          "prompts": [
+            "Copper engines carry heavy freight because",
+            "Silver rivers flow through the valley where",
+            "Violet gardens attract bees during spring because",
+            "Golden clocks measure the passing hours while"
+          ],
+          "max_new_tokens": 8
+        }
+      }
+    ],
+    "transitions": [
+      {
+        "source": "o0-b1",
+        "target": "o3-b4"
+      }
+    ],
+    "onggi": "onggi",
+    "store": "REPLACE_WITH_RECREATED_STORE"
+  },
+  "metadata": {
+    "python": "3.10.12",
+    "platform": "Linux-6.8.0-40-generic-x86_64-with-glibc2.35",
+    "runner_sha256": "d2e05cef4278d25a664ca86235c8b3f3b394b83408abe25c98db900e57454640",
+    "adapters_sha256": "20ec8ea7a3fc428f08b6f76592c53235d840c20127ce62611e6c76447cf66fa3"
+  },
+  "cache_policy": "OS page cache as found, primed by base restore; no Onggi chunk cache",
+  "timing_scope": "old runtime release through first checked target response; base preparation excluded",
+  "summary": [
+    {
+      "source": "o0-b1",
+      "target": "o3-b4",
+      "mode": "full",
+      "samples": 2,
+      "failed": 0,
+      "unsupported": 0,
+      "release_s": {
+        "p50": 1.1556869990890846,
+        "p95": 1.2316641960060224
+      },
+      "restore_s": {
+        "p50": 30.612512107938528,
+        "p95": 34.910548904095776
+      },
+      "load_s": {
+        "p50": 9.171913729049265,
+        "p95": 10.265964920981787
+      },
+      "first_response_s": {
+        "p50": 0.36361814092379063,
+        "p95": 0.4002897850004956
+      },
+      "end_to_end_s": {
+        "p50": 41.37972201302182,
+        "p95": 46.73251437896397
+      }
+    },
+    {
+      "source": "o0-b1",
+      "target": "o3-b4",
+      "mode": "delta",
+      "samples": 2,
+      "failed": 0,
+      "unsupported": 0,
+      "release_s": {
+        "p50": 1.231869781971909,
+        "p95": 1.267592286108993
+      },
+      "restore_s": {
+        "p50": 0.48070304305292666,
+        "p95": 0.48646800604183227
+      },
+      "load_s": {
+        "p50": 8.449285033042543,
+        "p95": 8.758803904987872
+      },
+      "first_response_s": {
+        "p50": 0.4529600420501083,
+        "p95": 0.4678591729607433
+      },
+      "end_to_end_s": {
+        "p50": 10.671224617981352,
+        "p95": 10.924359141034074
+      }
+    }
+  ],
+  "trials": [
+    {
+      "source": "o0-b1",
+      "target": "o3-b4",
+      "mode": "full",
+      "status": "ok",
+      "cleanup": "ok",
+      "release_s": 1.1556869990890846,
+      "pull_stats": {
+        "files": 11,
+        "bytes": 16081399306,
+        "read_bytes": 10707247845,
+        "cache_bytes": 0,
+        "peer_bytes": 0,
+        "peer_chunks": 0,
+        "cached": 0,
+        "reused": 0,
+        "base_best": 0,
+        "local_bytes": 0,
+        "ranges": 839,
+        "duration_ns": 34872557993
+      },
+      "restore_s": 34.910548904095776,
+      "load_s": 10.265964920981787,
+      "adapter_timings": {
+        "runtime_create_s": 10.264782796031795
+      },
+      "first_response_s": 0.4002897850004956,
+      "end_to_end_s": 46.73251437896397,
+      "response": {
+        "kind": "rngd-token-ids",
+        "value": [
+          [
+            315,
+            872,
+            1579,
+            8333,
+            4791,
+            12923,
+            11595,
+            13
+          ],
+          [
+            279,
+            14154,
+            3363,
+            315,
+            64678,
+            3131,
+            14980,
+            13
+          ],
+          [
+            315,
+            279,
+            37492,
+            315,
+            308,
+            39916,
+            41947,
+            19837
+          ],
+          [
+            279,
+            12579,
+            4207,
+            6767,
+            279,
+            12579,
+            315,
+            892
+          ]
+        ]
+      },
+      "repetition": 0,
+      "worker_exit": 0,
+      "correctness": "match"
+    },
+    {
+      "source": "o0-b1",
+      "target": "o3-b4",
+      "mode": "delta",
+      "status": "ok",
+      "cleanup": "ok",
+      "release_s": 1.231869781971909,
+      "pull_stats": {
+        "files": 11,
+        "bytes": 16081399306,
+        "read_bytes": 2716384,
+        "cache_bytes": 0,
+        "peer_bytes": 0,
+        "peer_chunks": 0,
+        "cached": 0,
+        "base": "sha256:79ff4a809371ee7cd7c9dbbd4a9707f664e450642240e120d88acbaecd8d5c27",
+        "reused": 16069722669,
+        "base_best": 16069722669,
+        "local_bytes": 0,
+        "ranges": 18,
+        "duration_ns": 442434445
+      },
+      "restore_s": 0.48070304305292666,
+      "load_s": 8.758803904987872,
+      "adapter_timings": {
+        "runtime_create_s": 8.75808156398125
+      },
+      "first_response_s": 0.4529600420501083,
+      "end_to_end_s": 10.924359141034074,
+      "response": {
+        "kind": "rngd-token-ids",
+        "value": [
+          [
+            315,
+            872,
+            1579,
+            8333,
+            4791,
+            12923,
+            11595,
+            13
+          ],
+          [
+            279,
+            14154,
+            3363,
+            315,
+            64678,
+            3131,
+            14980,
+            13
+          ],
+          [
+            315,
+            279,
+            37492,
+            315,
+            308,
+            39916,
+            41947,
+            19837
+          ],
+          [
+            279,
+            12579,
+            4207,
+            6767,
+            279,
+            12579,
+            315,
+            892
+          ]
+        ]
+      },
+      "repetition": 0,
+      "worker_exit": 0,
+      "correctness": "match"
+    },
+    {
+      "source": "o0-b1",
+      "target": "o3-b4",
+      "mode": "delta",
+      "status": "ok",
+      "cleanup": "ok",
+      "release_s": 1.267592286108993,
+      "pull_stats": {
+        "files": 11,
+        "bytes": 16081399306,
+        "read_bytes": 2716384,
+        "cache_bytes": 0,
+        "peer_bytes": 0,
+        "peer_chunks": 0,
+        "cached": 0,
+        "base": "sha256:79ff4a809371ee7cd7c9dbbd4a9707f664e450642240e120d88acbaecd8d5c27",
+        "reused": 16069722669,
+        "base_best": 16069722669,
+        "local_bytes": 0,
+        "ranges": 18,
+        "duration_ns": 447040256
+      },
+      "restore_s": 0.48646800604183227,
+      "load_s": 8.449285033042543,
+      "adapter_timings": {
+        "runtime_create_s": 8.44864240696188
+      },
+      "first_response_s": 0.4678591729607433,
+      "end_to_end_s": 10.671224617981352,
+      "response": {
+        "kind": "rngd-token-ids",
+        "value": [
+          [
+            315,
+            872,
+            1579,
+            8333,
+            4791,
+            12923,
+            11595,
+            13
+          ],
+          [
+            279,
+            14154,
+            3363,
+            315,
+            64678,
+            3131,
+            14980,
+            13
+          ],
+          [
+            315,
+            279,
+            37492,
+            315,
+            308,
+            39916,
+            41947,
+            19837
+          ],
+          [
+            279,
+            12579,
+            4207,
+            6767,
+            279,
+            12579,
+            315,
+            892
+          ]
+        ]
+      },
+      "repetition": 1,
+      "worker_exit": 0,
+      "correctness": "match"
+    },
+    {
+      "source": "o0-b1",
+      "target": "o3-b4",
+      "mode": "full",
+      "status": "ok",
+      "cleanup": "ok",
+      "release_s": 1.2316641960060224,
+      "pull_stats": {
+        "files": 11,
+        "bytes": 16081399306,
+        "read_bytes": 10707247845,
+        "cache_bytes": 0,
+        "peer_bytes": 0,
+        "peer_chunks": 0,
+        "cached": 0,
+        "reused": 0,
+        "base_best": 0,
+        "local_bytes": 0,
+        "ranges": 839,
+        "duration_ns": 30558436775
+      },
+      "restore_s": 30.612512107938528,
+      "load_s": 9.171913729049265,
+      "adapter_timings": {
+        "runtime_create_s": 9.171203489997424
+      },
+      "first_response_s": 0.36361814092379063,
+      "end_to_end_s": 41.37972201302182,
+      "response": {
+        "kind": "rngd-token-ids",
+        "value": [
+          [
+            315,
+            872,
+            1579,
+            8333,
+            4791,
+            12923,
+            11595,
+            13
+          ],
+          [
+            279,
+            14154,
+            3363,
+            315,
+            64678,
+            3131,
+            14980,
+            13
+          ],
+          [
+            315,
+            279,
+            37492,
+            315,
+            308,
+            39916,
+            41947,
+            19837
+          ],
+          [
+            279,
+            12579,
+            4207,
+            6767,
+            279,
+            12579,
+            315,
+            892
+          ]
+        ]
+      },
+      "repetition": 1,
+      "worker_exit": 0,
+      "correctness": "match"
+    }
+  ],
+  "sanitization": "Store/executable/session/site paths and raw worker logs omitted; numeric measurements and responses unchanged."
+}
