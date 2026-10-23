@@ -48,7 +48,7 @@ Interface: `open_model(device, device_index, artifact_dir, runtime)` returns an 
 Files: `experiments/configs/*`, experiment record/data, English/Korean READMEs, CI workflow.
 
 - [x] Add placeholder configs, exact invocation/stage definitions, failure and cache-policy documentation.
-- [ ] Exercise real Onggi full/delta restoration with byte-checked fixtures.
+- [x] Exercise real Onggi full/delta restoration with byte-checked fixtures.
 - [ ] Run available device-allocated hardware trials; record unsupported/environment limitations and clean temporary resources.
 - [ ] Fresh independent review, meaningful fixes with regression tests, full suite, sensitive-data and diff checks; open a reviewable PR with evidence.
 
@@ -62,5 +62,5 @@ Files: `experiments/configs/*`, experiment record/data, English/Korean READMEs, 
 - Generation-limit regressions: both adapters rejected multi-token requests → passed with per-request limits and early EOS handling.
 - Python 3.10 test portability fixed after Linux exposed `TestCase.enterContext` as 3.11-only.
 - CLI integration proves six distinct worker PIDs, correctness-gated output and private artifact cleanup.
-- Current full suite: 37 cases; Windows 35 passed/2 skipped, Linux Python 3.10 36 passed/1 opt-in Onggi test skipped. Hardware/real-Onggi evidence follows in the experiment record.
+- Full suite: 37 cases; Windows 35 passed/2 skipped, Linux Python 3.10 36 passed/1 opt-in Onggi test skipped. With actual Onggi enabled on Linux: all 37 passed, no skips, 1.555 s. Hardware evidence is recorded in `experiments/2026-10-23-file-versus-runtime-swap.md` as profiles finish.
 - Review boundary: no firmware-release guarantee inferred from Python GC; disjoint hardware source/target prompt prefixes and explicit cache-scope disclosure are used instead of modifying vendor cache behavior.

@@ -1,0 +1,42 @@
+test_real_full_delta_restore_produces_same_target_with_less_store_payload (test_onggi_integration.OnggiIntegration) ... ok
+test_artifact_paths_reject_escape_absolute_missing_and_wrong_types (test_swap_adapters.AdapterTests) ... ok
+test_atom_close_collects_runtime_before_compiled_model (test_swap_adapters.AdapterTests) ... ok
+test_atom_close_reports_destructor_failure_and_restores_unraisable_hook (test_swap_adapters.AdapterTests) ... ok
+test_atom_fingerprint_includes_all_arrays_all_bytes_dtype_and_shape (test_swap_adapters.AdapterTests) ... ok
+test_atom_rejects_empty_nonfinite_and_non_numeric_outputs (test_swap_adapters.AdapterTests) ... ok
+test_atom_uses_explicit_device_and_metadata_zero_inputs (test_swap_adapters.AdapterTests) ... ok
+test_import_does_not_import_vendor_sdks_or_numpy (test_swap_adapters.AdapterTests) ... ok
+test_invalid_devices_backend_and_lengths_fail_before_sdk_use (test_swap_adapters.AdapterTests) ... ok
+test_optimum_close_reports_destructor_failure_and_restores_unraisable_hook (test_swap_adapters.AdapterTests) ... ok
+test_optimum_defaults_tokenizer_to_model_and_rejects_bad_generation (test_swap_adapters.AdapterTests) ... ok
+test_optimum_generation_limit_returns_all_tokens_and_allows_early_eos (test_swap_adapters.AdapterTests) ... ok
+test_optimum_returns_only_generated_tokens_and_left_pads (test_swap_adapters.AdapterTests) ... ok
+test_rngd_generation_limit_changes_per_request_and_allows_early_eos (test_swap_adapters.AdapterTests) ... ok
+test_rngd_honors_max_model_len_and_propagates_shutdown_failure (test_swap_adapters.AdapterTests) ... ok
+test_rngd_one_greedy_token_per_prompt_with_explicit_device (test_swap_adapters.AdapterTests) ... ok
+test_rngd_rejects_missing_empty_invalid_or_wrong_count_tokens (test_swap_adapters.AdapterTests) ... ok
+test_symlink_cannot_escape_artifact_tree (test_swap_adapters.AdapterTests) ... ok
+test_token_adapters_reject_invalid_generation_limits_and_over_limit_outputs (test_swap_adapters.AdapterTests) ... ok
+test_token_adapters_reject_invalid_prompts (test_swap_adapters.AdapterTests) ... ok
+test_cleanup_failure_is_not_a_success (test_swap_bench.BenchTests) ... ok
+test_cli_invalid_config_exits_nonzero_without_sdk_import (test_swap_bench.BenchTests) ... ok
+test_cli_runs_isolated_workers_and_keeps_correctness_gated_report (test_swap_bench.BenchTests) ... ok
+test_constructor_failure_retains_files_and_reports_uncertain_cleanup (test_swap_bench.BenchTests) ... ok
+test_delta_releases_old_runtime_before_consuming_private_base (test_swap_bench.BenchTests) ... ok
+test_different_artifacts_cannot_reuse_resident_runtime (test_swap_bench.BenchTests) ... ok
+test_existing_workspace_is_never_removed (test_swap_bench.BenchTests) ... ok
+test_full_does_not_offer_delta_base (test_swap_bench.BenchTests) ... ok
+test_inconsistent_full_results_invalidate_entire_transition (test_swap_bench.BenchTests) ... ok
+test_nearest_rank_percentiles_and_sample_counts (test_swap_bench.BenchTests) ... ok
+test_pull_command_is_argv_and_delta_uses_only_provided_base (test_swap_bench.BenchTests) ... ok
+test_pull_failure_and_wrong_manifest_are_not_accepted (test_swap_bench.BenchTests) ... ok
+test_release_failure_stops_target_restore_and_retains_directory (test_swap_bench.BenchTests) ... ok
+test_request_failure_is_error_and_cleanup_still_runs (test_swap_bench.BenchTests) ... ok
+test_resident_uses_same_runtime_for_new_request (test_swap_bench.BenchTests) ... ok
+test_schema_rejects_ambiguous_or_unusable_inputs (test_swap_bench.BenchTests) ... ok
+test_summary_excludes_mismatch_and_missing_reference (test_swap_bench.BenchTests) ... ok
+
+----------------------------------------------------------------------
+Ran 37 tests in 1.555s
+
+OK

@@ -65,7 +65,7 @@ Python/SDK imports during base preparation are excluded from the interval.
 - `resident`: keep the existing runtime and make the target request. Supported
   only when manifest and runtime configuration are identical. ATOM's bundle must
   already include compatible shared-context graphs. Separately compiled graphs
-  remain visibly unsupported. No context IDs are forced or patched.
+  are outside this runner's resident adapter. No context IDs are forced or patched.
 
 The Optimum/RNGD examples deliberately share one manifest across batch sizes:
 their delta path is a zero-artifact-change control, while resident requests test
@@ -108,3 +108,12 @@ destructor errors, but cannot prove firmware-level release. Constructor failures
 retain files and report unknown cleanup; the parent stops before another trial.
 Publishing results requires sanitized site paths, model,
 SDK/driver versions, source/config/artifact hashes and a cleanup record.
+
+For actual checkpoint-tensor updates and custom shared-weight graph swapping,
+see the existing [rngd-pd implementation and verification](https://github.com/ai-computing/rngd-pd/pull/22)
+and its native `rngd_pd.swap.bench_rngd` / `bench_atom_bundles` harnesses.
+This file-materialization experiment does not replace those engine tests or
+establish a missing hardware capability. An unsupported resident case here means
+this adapter does not bind a different artifact, not that every NPU runtime is
+incapable of retaining weights. Tensor updates, graph selection, file restoration
+and vendor-engine reconstruction have distinct timing boundaries.

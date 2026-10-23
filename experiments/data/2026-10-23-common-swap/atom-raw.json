@@ -1,0 +1,295 @@
+{
+  "schema_version": 1,
+  "complete": true,
+  "ok": true,
+  "implementation_commit": "0d7016a4332ebcab2ae9b067a99d6e2b264d80a6",
+  "original_result_sha256": "acdd1281e1e1342de3e7f48bf1ae4bb850fba3416d64103b0503c9115dda9b58",
+  "config": {
+    "device": "atom",
+    "device_index": 0,
+    "repetitions": 2,
+    "modes": [
+      "full",
+      "delta",
+      "resident"
+    ],
+    "variants": [
+      {
+        "name": "b1",
+        "ref": "sha256:b4cf7ef6182ad965a189f202b3bd9a7a2b9e65933214c06344c198f90c7be666",
+        "runtime": {
+          "graph": "model.rbln"
+        },
+        "request": {}
+      },
+      {
+        "name": "b4",
+        "ref": "sha256:284934f4c633cb2051ddc8beb8afa77574e0b2b1fabca2d0278548bbe9f10ad6",
+        "runtime": {
+          "graph": "model.rbln"
+        },
+        "request": {}
+      }
+    ],
+    "transitions": [
+      {
+        "source": "b1",
+        "target": "b4"
+      }
+    ],
+    "onggi": "onggi",
+    "store": "REPLACE_WITH_RECREATED_STORE"
+  },
+  "metadata": {
+    "python": "3.10.12",
+    "platform": "Linux-6.8.0-40-generic-x86_64-with-glibc2.35",
+    "runner_sha256": "d2e05cef4278d25a664ca86235c8b3f3b394b83408abe25c98db900e57454640",
+    "adapters_sha256": "20ec8ea7a3fc428f08b6f76592c53235d840c20127ce62611e6c76447cf66fa3"
+  },
+  "cache_policy": "OS page cache as found, primed by base restore; no Onggi chunk cache",
+  "timing_scope": "old runtime release through first checked target response; base preparation excluded",
+  "summary": [
+    {
+      "source": "b1",
+      "target": "b4",
+      "mode": "full",
+      "samples": 2,
+      "failed": 0,
+      "unsupported": 0,
+      "release_s": {
+        "p50": 0.39753294503316283,
+        "p95": 0.47409483103547245
+      },
+      "restore_s": {
+        "p50": 35.26862984197214,
+        "p95": 38.13096303702332
+      },
+      "load_s": {
+        "p50": 13.842084395000711,
+        "p95": 14.129526856006123
+      },
+      "first_response_s": {
+        "p50": 0.0977986230282113,
+        "p95": 0.12498798791784793
+      },
+      "end_to_end_s": {
+        "p50": 49.60606129595544,
+        "p95": 52.859612793894485
+      }
+    },
+    {
+      "source": "b1",
+      "target": "b4",
+      "mode": "delta",
+      "samples": 2,
+      "failed": 0,
+      "unsupported": 0,
+      "release_s": {
+        "p50": 0.3997400510124862,
+        "p95": 0.4199187259655446
+      },
+      "restore_s": {
+        "p50": 38.267330643953755,
+        "p95": 49.174841000000015
+      },
+      "load_s": {
+        "p50": 11.962242077919655,
+        "p95": 14.121898996992968
+      },
+      "first_response_s": {
+        "p50": 0.0897381769027561,
+        "p95": 0.09506541502196342
+      },
+      "end_to_end_s": {
+        "p50": 50.71906224999111,
+        "p95": 63.811739407945424
+      }
+    },
+    {
+      "source": "b1",
+      "target": "b4",
+      "mode": "resident",
+      "samples": 0,
+      "failed": 0,
+      "unsupported": 2,
+      "release_s": null,
+      "restore_s": null,
+      "load_s": null,
+      "first_response_s": null,
+      "end_to_end_s": null
+    }
+  ],
+  "trials": [
+    {
+      "source": "b1",
+      "target": "b4",
+      "mode": "full",
+      "status": "ok",
+      "cleanup": "ok",
+      "release_s": 0.39753294503316283,
+      "pull_stats": {
+        "files": 1,
+        "bytes": 14152348510,
+        "read_bytes": 9222267653,
+        "cache_bytes": 0,
+        "peer_bytes": 0,
+        "peer_chunks": 0,
+        "cached": 0,
+        "reused": 0,
+        "base_best": 0,
+        "local_bytes": 0,
+        "ranges": 689,
+        "duration_ns": 35119083033
+      },
+      "restore_s": 35.26862984197214,
+      "load_s": 13.842084395000711,
+      "adapter_timings": {
+        "host_parse_s": 13.303924815030769,
+        "runtime_create_s": 0.4504025129135698
+      },
+      "first_response_s": 0.0977986230282113,
+      "end_to_end_s": 49.60606129595544,
+      "response": {
+        "kind": "atom-step-sha256",
+        "value": "5da87a4b7fd151e80001a0d5a30b576453250d27ff5f898877a75e4ed66b4020"
+      },
+      "repetition": 0,
+      "worker_exit": 0,
+      "correctness": "match"
+    },
+    {
+      "source": "b1",
+      "target": "b4",
+      "mode": "delta",
+      "status": "ok",
+      "cleanup": "ok",
+      "release_s": 0.4199187259655446,
+      "pull_stats": {
+        "files": 1,
+        "bytes": 14152348510,
+        "read_bytes": 3434136,
+        "cache_bytes": 0,
+        "peer_bytes": 0,
+        "peer_chunks": 0,
+        "cached": 0,
+        "reused": 0,
+        "base_best": 0,
+        "local_base": "sha256:b4cf7ef6182ad965a189f202b3bd9a7a2b9e65933214c06344c198f90c7be666",
+        "local_bytes": 13959156356,
+        "ranges": 1,
+        "duration_ns": 48898893699
+      },
+      "restore_s": 49.174841000000015,
+      "load_s": 14.121898996992968,
+      "adapter_timings": {
+        "host_parse_s": 13.583497017039917,
+        "runtime_create_s": 0.4411480559501797
+      },
+      "first_response_s": 0.09506541502196342,
+      "end_to_end_s": 63.811739407945424,
+      "response": {
+        "kind": "atom-step-sha256",
+        "value": "5da87a4b7fd151e80001a0d5a30b576453250d27ff5f898877a75e4ed66b4020"
+      },
+      "repetition": 0,
+      "worker_exit": 0,
+      "correctness": "match"
+    },
+    {
+      "source": "b1",
+      "target": "b4",
+      "mode": "resident",
+      "status": "unsupported",
+      "cleanup": "not-needed",
+      "reason": "resident requires the same manifest and runtime settings",
+      "repetition": 0,
+      "worker_exit": 0
+    },
+    {
+      "source": "b1",
+      "target": "b4",
+      "mode": "delta",
+      "status": "ok",
+      "cleanup": "ok",
+      "release_s": 0.3997400510124862,
+      "pull_stats": {
+        "files": 1,
+        "bytes": 14152348510,
+        "read_bytes": 3434136,
+        "cache_bytes": 0,
+        "peer_bytes": 0,
+        "peer_chunks": 0,
+        "cached": 0,
+        "reused": 0,
+        "base_best": 0,
+        "local_base": "sha256:b4cf7ef6182ad965a189f202b3bd9a7a2b9e65933214c06344c198f90c7be666",
+        "local_bytes": 13959156356,
+        "ranges": 1,
+        "duration_ns": 38039453439
+      },
+      "restore_s": 38.267330643953755,
+      "load_s": 11.962242077919655,
+      "adapter_timings": {
+        "host_parse_s": 11.451485174009576,
+        "runtime_create_s": 0.41682716691866517
+      },
+      "first_response_s": 0.0897381769027561,
+      "end_to_end_s": 50.71906224999111,
+      "response": {
+        "kind": "atom-step-sha256",
+        "value": "5da87a4b7fd151e80001a0d5a30b576453250d27ff5f898877a75e4ed66b4020"
+      },
+      "repetition": 1,
+      "worker_exit": 0,
+      "correctness": "match"
+    },
+    {
+      "source": "b1",
+      "target": "b4",
+      "mode": "resident",
+      "status": "unsupported",
+      "cleanup": "not-needed",
+      "reason": "resident requires the same manifest and runtime settings",
+      "repetition": 1,
+      "worker_exit": 0
+    },
+    {
+      "source": "b1",
+      "target": "b4",
+      "mode": "full",
+      "status": "ok",
+      "cleanup": "ok",
+      "release_s": 0.47409483103547245,
+      "pull_stats": {
+        "files": 1,
+        "bytes": 14152348510,
+        "read_bytes": 9222267653,
+        "cache_bytes": 0,
+        "peer_bytes": 0,
+        "peer_chunks": 0,
+        "cached": 0,
+        "reused": 0,
+        "base_best": 0,
+        "local_bytes": 0,
+        "ranges": 689,
+        "duration_ns": 37998814345
+      },
+      "restore_s": 38.13096303702332,
+      "load_s": 14.129526856006123,
+      "adapter_timings": {
+        "host_parse_s": 13.560994739062153,
+        "runtime_create_s": 0.45915673195850104
+      },
+      "first_response_s": 0.12498798791784793,
+      "end_to_end_s": 52.859612793894485,
+      "response": {
+        "kind": "atom-step-sha256",
+        "value": "5da87a4b7fd151e80001a0d5a30b576453250d27ff5f898877a75e4ed66b4020"
+      },
+      "repetition": 1,
+      "worker_exit": 0,
+      "correctness": "match"
+    }
+  ],
+  "sanitization": "Store/executable/session/site paths and raw worker logs omitted; numeric measurements and responses unchanged."
+}
